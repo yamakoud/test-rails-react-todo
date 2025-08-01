@@ -102,7 +102,7 @@ jobs:
       # You may pin to the exact commit or the version.
       # uses: standardnotes/brakeman-action@220447f031dd1ecfd5f7f303cfb9fdca744210bf
       uses: standardnotes/brakeman-action@v1.0.0
-      # with:
+      with:
         # Scanning options (https://github.com/presidentbeef/brakeman/blob/main/OPTIONS.md)
-        # options: # optional
+        options: '-p /path/to/your/rails/app'
               
