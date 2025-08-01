@@ -98,6 +98,8 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+    - name: Install Brakeman
+      run: gem install brakeman
     - name: Run Brakeman
       run: |
         cd backend
