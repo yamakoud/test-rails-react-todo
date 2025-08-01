@@ -98,7 +98,13 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
-    - name: Brakeman code scanning
-      uses: standardnotes/brakeman-action@v1.0.0
+    - name: Run Brakeman
+      run: |
+        cd backend
+        brakeman --format sarif --output brakeman-results.sarif
+
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v2
       with:
-        options: '-p /github/workspace/backend'
+        sarif_file: backend/brakeman-results.sarif
+        category: brakeman
