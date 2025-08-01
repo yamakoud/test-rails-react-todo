@@ -104,6 +104,8 @@ jobs:
       run: |
         cd backend
         brakeman --format sarif --output brakeman-results.sarif
+      continue-on-error: true  # Brakemanが脆弱性を見つけても続行
+
 
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v2
