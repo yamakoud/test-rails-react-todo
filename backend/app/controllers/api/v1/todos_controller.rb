@@ -23,6 +23,10 @@ class Api::V1::TodosController < ApplicationController
     end
   end
 
+  def test
+    @todo = Todo.find(params[:id])
+  end
+
   private
   
     def todo_params
