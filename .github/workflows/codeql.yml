@@ -99,7 +99,7 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
     - name: Install Brakeman
-      run: gem install brakeman
+      run: sudo gem install brakeman
     - name: Run Brakeman
       run: |
         cd backend
